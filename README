@@ -1,0 +1,28 @@
+BATS Tech Test
+
+Time Spent: 3-4 Hours
+Apologies for the lack of frontend.
+With the limited time I had, I decided to focus on backend skills like django, sql and designing for a scalable architecture
+
+
+Running the server:
+Have sqlite installed
+Install virtual environment
+If you want to start from scratch, delete db.sqlite3
+Run django migration
+Initialise data if db.sqlite3 was removed
+Run django server or shell
+
+To initalise data:
+Run django shell
+> from umtf.servics.load_fixtures import load_umtfs, load_trades
+Run those functions with the appropriate file paths (given files are in 'umtf/fixtures')
+> from umtf.tasks import update_latest_stock_values
+> update_latest_stock_values()
+
+To Do further:
+    - Implement Bootstrap or similar frontend tool
+    - Implement all test functions and expand code coverage
+    - Make load_fixtures package more robust
+        - Don't want to drop whole file if one row fails
+        - Appropriately log failures to console

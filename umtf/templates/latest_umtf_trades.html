@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% load cached_paginator %}
+<article class="panel col-md-12">
+        <div class="panel-body">
+            <table cellspacing="0" id="result_list" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>UMTF</th>
+                        <th>Amount</th>
+                        <th>Currency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stock in object_list %}
+                    <tr>
+                        <td>
+                            {{ stock.umtf }}
+                        </td>
+                        <td>
+                            {{ stock.amount }}
+                        </td>
+                        <td>
+                            {{ stock.currency }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% if is_paginated %}
+                {% paginate page_obj %}
+            {% endif %}
+        </div>
+    </article>
+
+
+
+
+</body>
+</html>

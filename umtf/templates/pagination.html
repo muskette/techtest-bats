@@ -1,0 +1,10 @@
+<div>
+    <nav>
+        <ul class="pagination">
+            {% for item in paginator_list %}
+                <li>{{ item.verbose_name }}</li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <p> {{ object_list.paginator.num_pages }} Pages ( {{ object_list.paginator.count }} Items)</p>
+</div>
